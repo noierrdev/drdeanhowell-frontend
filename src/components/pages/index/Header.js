@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 
     return (
         <>
-            <div style={{backgroundImage:"linear-gradient(to bottom, #2d308f, #0c0d1b)",height:"70vh",paddingTop:"5vh",boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"}} >
+            <div style={{backgroundImage:"linear-gradient(to bottom, #2d308f, #0c0d1b)",position:'relative',overflowX:"hidden",maxWidth:"100%",width:"100%",minWidth:"100%",height:"70vh",paddingTop:"5vh",boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"}} >
+                <div style={{position:"absolute",right:"-30vw",top:"-90vh",backgroundColor:"#3d409a",width:1293,height:1293,borderRadius:"50%"}} ></div>
+                <img src={DeanHowell} style={{position:"absolute",right:0,zIndex:4,bottom:0}} />
                 <Container maxWidth="xl" >
                     <Navbar/>
-                    <div style={{position:"absolute",zIndex:3,left:"60vw",top:"-90vh",backgroundColor:"#3d409a",width:1293,height:1293,borderRadius:"50%"}} ></div>
+                    
                     <Typography variant="h4" component={`h4`} color={"white"} sx={{marginTop:"10vh"}} >
                         Helping People
                     </Typography>
@@ -39,8 +41,9 @@ import { Link } from "react-router-dom";
                             </Chip>
                         </Link>
                     </div>
-                    <img src={DeanHowell} style={{position:"absolute",right:0,zIndex:4,bottom:"23vh"}} />
+                    
                 </Container>
+                
             </div>
         </>
     )
