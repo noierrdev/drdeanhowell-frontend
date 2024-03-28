@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { ThemeProvider, createTheme } from "@mui/material";
+import AppContext from './AppContext'
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes";
+import { Provider } from "react-redux";
+import store from './store'
 function App() {
+  const theme=createTheme({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider value={{}} >
+      <Provider store={store} >
+        <ThemeProvider theme={theme} >
+          <BrowserRouter>
+            <AppRoutes/>
+          </BrowserRouter>
+        </ThemeProvider>
+      </Provider>
+    </AppContext.Provider>
   );
 }
 
